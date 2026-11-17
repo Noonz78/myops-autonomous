@@ -45,15 +45,27 @@ After these steps, full autonomous capabilities will be available. See `/loop` a
 ```
 myops-autonomous/
 ├── .claude/                    # Session configs & memory
-│   ├── settings.json          # Project-specific config
+│   ├── settings.json          # Project-specific config (model, permissions, hooks)
+│   ├── MEMORY.md              # Memory index for this session
 │   └── memory/                # Persistent knowledge base
-├── agents/superpowers/        # Agent configurations (placeholder)
+├── OpenSpec/                  # Cloned OpenSpec repository
+├── superpowers/               # Cloned Superpowers repository
 ├── docs/specs/               # OpenSpec output location
 ├── tasks/                    # Task definitions & queue
 ├── .scratch/                 # Temp files, startup prompts
 ├── CLAUDE.md                 # This guide
 └── README.md                 # Quick reference
 ```
+
+### Permission Configuration
+
+The `.claude/settings.json` file includes a permissive allowlist for development workflow:
+
+- **Allowed**: All read/write/edit/glob operations, git commands, common development tools
+- **Denied**: Dangerous operations (rm -rf *, dd *, truncation redirects)  
+- **Default**: `acceptEdits` - allows most file modifications without prompting
+
+This configuration enables smooth autonomous work while protecting against accidental data loss.
 
 ## Commands Guide
 
@@ -119,6 +131,22 @@ Temporary files and startup prompts are stored in `.scratch/`:
 ## Tips
 
 1. **Create tasks before working** - Lets agents track progress
-2. **Use `/loop` for long sessions** - Keeps work autonomous
-3. **Clone OpenSpec & Superpowers first** - Before using full autonomous features
-4. **Check `.scratch/STARTUP-PROMPT.md`** - For accurate configuration status
+2. **Use `/loop` for long sessions** - Keeps work autonomous  
+3. **Check `.scratch/SETUP-COMPLETED.md`** - See what's configured and next steps
+4. **Read memory entries in `.claude/memory/`** - Session history and context
+
+### Next Steps (Optional)
+
+To unlock full autonomous capabilities:
+
+1. **Install OpenSpec CLI** (for command-line skills like `/openspec-propose`):
+   ```bash
+   irm https://openspec.dev/cli/install.ps1 | iex
+   # or: npm install -g @fission-ai/openspec@latest
+   ```
+
+2. **Register Superpowers plugin** (for AI skills like `brainstorming`, `writing-plans`):
+   ```bash
+   /plugin install superpowers@superpowers-marketplace
+   # or use official marketplace: /plugin install superpowers@claude-plugins-official
+   ```
