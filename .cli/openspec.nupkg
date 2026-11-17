@@ -1,0 +1,4 @@
+[This is a placeholder - OpenSpec CLI should be installed via official install script]
+# To install OpenSpec CLI:
+#   irm https://openspec.dev/cli/install.ps1 | iex
+# or: npm install -g @fission-ai/openspec@latest
