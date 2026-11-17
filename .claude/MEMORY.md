@@ -1,0 +1,1 @@
+- [startup-configured](config_startup_session.md) — Cloned OpenSpec & Superpowers, updated docs to reflect configured state
