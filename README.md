@@ -1,32 +1,28 @@
 # Autonomous Workspace Foundation - myops-autonomous
 
-## ⚠️ Current Status: Incomplete Configuration
+## ✅ Current Status: Configured
 
-This repository provides the **foundation** for autonomous work, but requires additional setup before OpenSpec and Superpowers are fully functional.
+This repository provides the foundation for autonomous work with OpenSpec and Superpowers **already integrated**.
 
 - ✅ Git repo initialized with full structure
 - ✅ Task management commands ready (`/todo`, `/status`, `/loop`)
 - ✅ Memory system configured at `.claude/memory/`
-- ❌ **OpenSpec GitHub repo NOT cloned yet** (https://github.com/Fission-AI/OpenSpec)
-- ❌ **Superpowers GitHub repo NOT cloned yet** (https://github.com/obra/superpowers)
+- ✅ **OpenSpec GitHub repo cloned** (https://github.com/Fission-AI/OpenSpec)
+- ✅ **Superpowers GitHub repo cloned** (https://github.com/obra/superpowers)
 
-## Getting Started
-
-### Step 1: Clone Required Repositories
+## Quick Start
 
 ```bash
 cd "D:\Repos\myops-autonomous"
 
-# Clone OpenSpec
-git clone https://github.com/Fission-AI/OpenSpec.git agents/openspec
+# Optional: Install OpenSpec CLI for command-line skills
+irm https://openspec.dev/cli/install.ps1 | iex
 
-# Clone Superpowers  
-git clone https://github.com/obra/superpowers.git agents/superpowers
+# Register Superpowers plugin (optional but recommended)
+/plugin install superpowers@superpowers-marketplace
 ```
 
-### Step 2: Configure for Full Functionality
-
-Update `.claude/settings.json` to integrate the cloned repos as external tools. See `CLAUDE.md` for configuration instructions.
+See `CLAUDE.md` for full documentation and next steps.
 
 ## Features (Available After Setup)
 
@@ -52,7 +48,8 @@ myops-autonomous/
 │   ├── memory/          # Persistent knowledge base
 │   ├── settings.local.json
 │   └── scratch/         # Temp files (STARTUP-PROMPT.md)
-├── agents/superpowers/  # Superpowers repo (to be cloned)
+├── OpenSpec/            # Cloned OpenSpec repo
+├── superpowers/         # Cloned Superpowers repo
 ├── docs/specs/          # Auto-generated OpenSpec output
 ├── tasks/               # Task queue and progress
 ├── .scratch/            # Startup prompts, temp files
@@ -66,7 +63,8 @@ myops-autonomous/
 /todo Add user authentication flow
 ```
 
-### Run Autonomous Work (after cloning repos)
+### Run Autonomous Work
+
 ```bash
 # Run every 10 minutes
 /loop 10m /status
