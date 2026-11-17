@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "name": "myops-autonomous",
+  "description": "Autonomous workspace with OpenSpec integration",
+
+  "components": [
+    {
+      "path": ".claude",
+      "type": "config",
+      "description": "Session state, memory, and plans"
+    },
+    {
+      "path": "agents/superpowers",
+      "type": "agent",
+      "description": "Extended agent capabilities"
+    },
+    {
+      "path": "docs/specs",
+      "type": "documentation",
+      "description": "OpenSpec generated content"
+    },
+    {
+      "path": "tasks",
+      "type": "workflow",
+      "description": "Task queue and progress tracking"
+    }
+  ],
+
+  "workflows": [
+    {
+      "name": "autonomous-loop",
+      "description": "Iterative autonomous work cycle",
+      "steps": [
+        "/status - Check task status",
+        "/todo <task> - Create new tasks",
+        "/loop interval /prompt - Execute"
+      ]
+    },
+    {
+      "name": "open-spec-gen",
+      "description": "Generate specs from code changes",
+      "trigger": "file changes detected",
+      "output": "docs/specs/<project>.md"
+    }
+  ],
+
+  "integrations": [
+    {
+      "name": "OpenSpec",
+      "enabled": true,
+      "features": ["auto-doc-generation", "model-extraction", "runbook-creation"]
+    },
+    {
+      "name": "Task Management",
+      "enabled": true,
+      "commands": ["/todo", "/status", "/loop"]
+    },
+    {
+      "name": "Agent Superpowers",
+      "enabled": true,
+      "capabilities": ["autonomous-execution", "cross-file-context", "self-pacing"]
+    }
+  ]
+}
