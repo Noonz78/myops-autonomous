@@ -1,0 +1,39 @@
+{
+  "name": "Superpowers",
+  "version": "1.0.0",
+  "description": "Extended agent capabilities for autonomous work",
+
+  "capabilities": {
+    "autonomousTaskExecution": true,
+    "crossFileContext": true,
+    "selfPacing": true,
+    "contextAwareRefactoring": true,
+    "persistentState": true
+  },
+
+  "agents": [
+    {
+      "name": "claude",
+      "purpose": "General agent for complex multi-step tasks",
+      "tools": "*"
+    },
+    {
+      "name": "plan",
+      "purpose": "Software architect agent for implementation planning",
+      "tools": ["all except write"]
+    },
+    {
+      "name": "explore",
+      "purpose": "Fast read-only search agent for code location",
+      "tools": ["glob", "grep", "read", "web-fetch", "web-search"]
+    },
+    {
+      "name": "general-purpose",
+      "purpose": "Multi-step research and execution agent"
+    },
+    {
+      "name": "statusline-setup",
+      "purpose": "Configure Claude Code status line settings"
+    }
+  ]
+}

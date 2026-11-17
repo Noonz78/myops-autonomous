@@ -1,0 +1,29 @@
+# Logs
+**/*.log
+logs/
+*.log
+
+# Cache
+.claude/cache/
+*.tmp
+.cache
+
+# Node
+node_modules/
+pnpm-store/
+yarn.lock
+package-lock.json
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
