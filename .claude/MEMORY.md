@@ -1,1 +1,3 @@
-- [startup-configured](config_startup_session.md) — Cloned OpenSpec & Superpowers, updated docs to reflect configured state
+- [config_startup_session](memory/config_startup_session.md) — Cloned OpenSpec & Superpowers, updated docs to reflect configured state
+- [startup_work_complete](memory/startup_work_complete.md) — Initial startup session work completed - repos cloned and configured
+- [permission_improvements](memory/permission_improvements.md) — Added permission allowlists to reduce prompts for common operations
