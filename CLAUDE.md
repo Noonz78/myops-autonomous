@@ -1,6 +1,12 @@
 # Autonomous Work Repo - myops-autonomous
 
-This repository is configured for self-driving development with OpenSpec integration and agent superpowers.
+This repository provides the foundation for self-driving development with OpenSpec and Superpowers integration.
+
+## ⚠️ Important: Incomplete Setup
+
+**This repo is ready but NOT fully configured yet.** The GitHub repositories for OpenSpec and Superpowers need to be cloned before full autonomous capabilities work.
+
+See `.scratch/STARTUP-PROMPT.md` for the startup prompt template that new sessions should use.
 
 ## Overview
 
@@ -14,15 +20,13 @@ This repository is configured for self-driving development with OpenSpec integra
 myops-autonomous/
 ├── .claude/                    # Session configs & memory
 │   ├── settings.json          # Project-specific config
-│   ├── memory/                # Persistent knowledge base
-│   ├── plans/                 # Multi-step task plans
-│   └── tasks/                 # Task queue (active, backlog, completed)
-├── agents/                     # Agent configurations
-│   └── superpowers/           # Extended capabilities
-├── docs/                       # Auto-generated documentation
-│   └── specs/                 # OpenSpec generated content
-├── tasks/                      # Task definitions
-└── README.md                   # This guide
+│   └── memory/                # Persistent knowledge base
+├── agents/superpowers/        # Agent configurations (placeholder)
+├── docs/specs/               # OpenSpec output location
+├── tasks/                    # Task definitions & queue
+├── .scratch/                 # Temp files, startup prompts
+├── CLAUDE.md                 # This guide
+└── README.md                 # Quick reference
 ```
 
 ## Commands Guide
@@ -33,7 +37,6 @@ myops-autonomous/
 |---------|---------|
 | `/todo <subject>` | Create new task |
 | `/status` | List all tasks |
-| `/task <id> complete` | Mark task done |
 | `/loop [interval] /prompt` | Run iterative work loop |
 
 ### Planning Mode
@@ -42,56 +45,19 @@ myops-autonomous/
 - Exit with `ExitPlanMode` when ready
 - Review and approve plan before implementation
 
-### Agent Commands
+## ⚠️ Before Using OpenSpec & Superpowers
 
-- `/agent <name> <description>` - Spawn specialized agent
-  - `claude` - General purpose, all tools
-  - `plan` - Architecture decisions (read-only)
-  - `explore` - Code search with glob/grep
-  - `general-purpose` - Complex multi-step work
+These GitHub repositories must be cloned first:
 
-## OpenSpec Integration
+1. **OpenSpec**: `git clone https://github.com/Fission-AI/OpenSpec.git`
+2. **Superpowers**: `git clone https://github.com/obra/superpowers.git`
 
-OpenSpec auto-generates documentation as you work:
-
-```json
-docs/specs/open-spec-manifest.json  // Auto-generated specs
-docs/runbooks/                       // Operational procedures
-docs/architecture/                   // System designs
-```
-
-### Triggered by:
-- Code changes in your project
-- Task completion summaries
-- Architecture modifications
-
-## Agent Superpowers
-
-Enabled capabilities:
-
-1. **Autonomous Execution**
-   - Tasks persist across sessions
-   - Progress tracked in task files
-   - Dependencies auto-resolved
-
-2. **Cross-File Context**
-   - Understand relationships between files
-   - Make consistent refactoring decisions
-   - Know what to change and why
-
-3. **Self-Pacing**
-   - Agents run at optimal intervals
-   - Long tasks use background mode
-   - Fall back heartbeats for stuck work
-
-4. **Research & Exploration**
-   - Web search for external context
-   - Codebase grep/search operations
-   - Pattern matching across files
+Then configure `.claude/settings.json` to use these as external tools.
 
 ## Getting Started
 
 ### First Time Setup (Already Done)
+
 ```bash
 cd "D:\Repos\myops-autonomous"
 git add .
@@ -99,13 +65,15 @@ git commit -m "Initial setup"
 ```
 
 ### Creating Your First Task
+
 ```bash
 /todo Implement user authentication flow
 /todo Set up CI/CD pipeline
 /todo Write integration tests
 ```
 
-### Running Autonomous Work
+### Running Autonomous Work (After Cloning Repos)
+
 ```bash
 # Check status and continue working
 /status
@@ -114,28 +82,17 @@ git commit -m "Initial setup"
 /loop 10m /status
 ```
 
-## Memory System
+## Scratch Files
 
-Knowledge persists in `.claude/memory/`:
-- `user.md` - Your role and preferences
-- `feedback.md` - How to work with you
-- `project.md` - Current project context
-- `reference.md` - External resource links
+Temporary files and startup prompts are stored in `.scratch/`:
 
-See `MEMORY.md` for the full index.
-
-## Settings
-
-Located at `.claude/settings.json`:
-- `model`: qwen3.5:9b (local)
-- `effortLevel`: xhigh (thorough work)
-- `autonomousMode`: true
-- `openSpecIntegration.enabled`: true
+- `STARTUP-PROMPT.md` - Template for starting a new session
+- Shows configuration status and what needs to be done
+- Copy this file when moving the repo or creating backups
 
 ## Tips
 
 1. **Create tasks before working** - Lets agents track progress
 2. **Use `/loop` for long sessions** - Keeps work autonomous
-3. **Exit plan mode after review** - Triggers implementation
-4. **Check memory grows organically** - Documents what you've learned
-5. **Review generated specs periodically** - Verify OpenSpec accuracy
+3. **Clone OpenSpec & Superpowers first** - Before using full autonomous features
+4. **Check `.scratch/STARTUP-PROMPT.md`** - For accurate configuration status

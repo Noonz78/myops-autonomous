@@ -1,0 +1,15 @@
+{
+  "version": "2026-01.0",
+  "externalTools": {
+    "OpenSpec": {
+      "type": "git-repo",
+      "path": "./OpenSpec",
+      "description": "Fluid spec framework for AI-driven development"
+    },
+    "Superpowers": {
+      "type": "git-repo",
+      "path": "./superpowers",
+      "description": "Software development methodology for coding agents"
+    }
+  }
+}

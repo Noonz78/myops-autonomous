@@ -1,21 +1,39 @@
-# Autonomous Workspace with OpenSpec Integration
+# Autonomous Workspace Foundation - myops-autonomous
 
-This repo is configured for self-driving development work with automatic documentation.
+## ⚠️ Current Status: Incomplete Configuration
 
-## Features
+This repository provides the **foundation** for autonomous work, but requires additional setup before OpenSpec and Superpowers are fully functional.
+
+- ✅ Git repo initialized with full structure
+- ✅ Task management commands ready (`/todo`, `/status`, `/loop`)
+- ✅ Memory system configured at `.claude/memory/`
+- ❌ **OpenSpec GitHub repo NOT cloned yet** (https://github.com/Fission-AI/OpenSpec)
+- ❌ **Superpowers GitHub repo NOT cloned yet** (https://github.com/obra/superpowers)
+
+## Getting Started
+
+### Step 1: Clone Required Repositories
+
+```bash
+cd "D:\Repos\myops-autonomous"
+
+# Clone OpenSpec
+git clone https://github.com/Fission-AI/OpenSpec.git agents/openspec
+
+# Clone Superpowers  
+git clone https://github.com/obra/superpowers.git agents/superpowers
+```
+
+### Step 2: Configure for Full Functionality
+
+Update `.claude/settings.json` to integrate the cloned repos as external tools. See `CLAUDE.md` for configuration instructions.
+
+## Features (Available After Setup)
 
 - **OpenSpec Integration**: Auto-generates specs and docs as you code
 - **Task Management**: Create, track, and complete tasks automatically
 - **Agent Superpowers**: Multi-step autonomous task execution
 - **Persistent Memory**: Knowledge persists across sessions
-
-## Getting Started
-
-```bash
-cd "D:\Repos\myops-autonomous"
-git add .
-git commit -m "Initial setup with OpenSpec and agents"
-```
 
 ## Commands
 
@@ -24,7 +42,7 @@ git commit -m "Initial setup with OpenSpec and agents"
 | `/todo <subject>` | Create a new task |
 | `/loop [interval] /prompt` | Run autonomous iterative work |
 | `/status` | Check task status |
-| `/plan <task>` | Open plan mode for complex tasks |
+| `/plan` | Open plan mode for complex tasks |
 
 ## Project Structure
 
@@ -32,38 +50,36 @@ git commit -m "Initial setup with OpenSpec and agents"
 myops-autonomous/
 ├── .claude/              # Session state, plans, memory
 │   ├── memory/          # Persistent knowledge base
-│   ├── plans/           # Multi-step task plans
-│   └── settings.local.json
-├── agents/superpowers/  # Agent configurations
-├── docs/specs/          # Auto-generated OpenSpec docs
+│   ├── settings.local.json
+│   └── scratch/         # Temp files (STARTUP-PROMPT.md)
+├── agents/superpowers/  # Superpowers repo (to be cloned)
+├── docs/specs/          # Auto-generated OpenSpec output
 ├── tasks/               # Task queue and progress
+├── .scratch/            # Startup prompts, temp files
 └── README.md            # This file
 ```
 
-## How to Use
+## Quick Reference
 
 ### Create a Task
-```
+```bash
 /todo Add user authentication flow
 ```
 
-### Run Autonomous Work
-```
+### Run Autonomous Work (after cloning repos)
+```bash
+# Run every 10 minutes
 /loop 10m /status
 ```
-This runs `/status` every 10 minutes, checking tasks and working autonomously.
 
-### Plan Complex Implementation
-```
-/openplan - Enter plan mode before starting major features
-```
+### View Configuration Status
 
-## OpenSpec Integration
+See `.scratch/STARTUP-PROMPT.md` for:
+- Current configuration status
+- What needs to be done next
+- Template prompt for new sessions
 
-OpenSpec automatically generates documentation:
-- Extract API specs from code changes
-- Generate model diagrams from data structures
-- Create runbooks for operational procedures
-- Maintain architecture docs that stay in sync
+## See Also
 
-See `docs/specs/` for generated content.
+- `CLAUDE.md` - Full documentation with detailed commands
+- `.scratch/STARTUP-PROMPT.md` - Startup prompt template for new sessions
