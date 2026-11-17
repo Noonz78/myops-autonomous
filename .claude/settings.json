@@ -5,6 +5,34 @@
 
   "autonomousMode": true,
 
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write(.claude)",
+      "Write(.scratch)",
+      "Edit(.claude)",
+      "Edit(.scratch)",
+      "Glob(.claude)",
+      "Glob(.scratch)",
+      "Bash(git *)",
+      "Bash(git add)",
+      "Bash(git commit)",
+      "Bash(git status)",
+      "Bash(git log)",
+      "Bash(git branch)",
+      "Edit(*)",
+      "Write(*)",
+      "NotebookEdit(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(dd *)",
+      "Bash(: *)",
+      "Bash(> /dev/null)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
+
   "openSpecIntegration": {
     "enabled": true,
     "status": "CLONED - READY",
