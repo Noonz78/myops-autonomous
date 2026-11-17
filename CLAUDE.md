@@ -18,6 +18,19 @@ This repository provides the foundation for self-driving development with OpenSp
 - OpenSpec specs integration (via CLI install recommended)
 - Superpowers skills available via plugin marketplace
 
+## Autonomous execution policy
+
+Complete the assigned objective autonomously.
+
+- Do not ask the user to choose between reasonable implementation options.
+- Make architecture, dependency, naming, layout, testing, and workflow decisions yourself.
+- Prefer the option most compatible with the existing repository, OpenSpec, and Superpowers.
+- Record important assumptions and decisions in the repository, then continue.
+- Do not stop merely to report progress.
+- Continue through implementation, testing, verification, and documentation.
+- Ask the user only when required information cannot be inferred and proceeding would risk irreversible data loss, exposure of credentials, paid external actions, or changes outside this repository.
+- If a command fails, diagnose it, try a reasonable alternative, and continue.
+
 ### Next Steps for Full Integration
 
 1. **Install OpenSpec CLI** (for command-line skills like `/openspec-propose`):
