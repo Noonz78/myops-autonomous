@@ -6,5 +6,5 @@
 	update = checkout
 [submodule "superpowers"]
 	path = superpowers
-	url = git@github.com:obra/superpowers.git
+	url = https://github.com/obra/superpowers.git
 	update = checkout
