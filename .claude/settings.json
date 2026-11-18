@@ -1,6 +1,6 @@
 {
   "model": "qwen3.5:9b",
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "autoUpdatesChannel": "latest",
 
   "autonomousMode": true,
@@ -15,15 +15,9 @@
       "Glob(.claude)",
       "Glob(.scratch)",
       "Bash(*)",
-      "Bash(git *)",
-      "Bash(git add)",
-      "Bash(git commit)",
-      "Bash(git status)",
-      "Bash(git log)",
-      "Bash(git branch)",
-      "Edit(*)",
-      "Write(*)",
-      "NotebookEdit(*)"
+      "Edit",
+      "Write",
+      "NotebookEdit"
     ],
     "deny": [
       "Bash(rm -rf *)",
