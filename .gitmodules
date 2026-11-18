@@ -2,7 +2,7 @@
 # These files enable specification-driven development (SDD) workflow
 [submodule "OpenSpec"]
 	path = OpenSpec
-	url = https://github.com/Fission-AI/OpenSpec.git
+	url = https://github.com/Noonz78/OpenSpec.git
 	update = checkout
 [submodule "superpowers"]
 	path = superpowers
