@@ -31,6 +31,17 @@ Complete the assigned objective autonomously.
 - Ask the user only when required information cannot be inferred and proceeding would risk irreversible data loss, exposure of credentials, paid external actions, or changes outside this repository.
 - If a command fails, diagnose it, try a reasonable alternative, and continue.
 
+## Windows shell environment
+
+This project runs Claude Code natively on Windows, but Claude Code's shell tool is Git Bash.
+
+- Commands sent through the Bash tool must use Bash syntax.
+- Use `cat`, `printf`, `test`, `rm`, `cp`, `mv`, `grep`, and `/dev/null`.
+- Do not use PowerShell cmdlets such as `Out-File`, `Set-Content`, `Get-Content`, `Remove-Item`, or `Test-Path` inside Bash calls.
+- When PowerShell is specifically required, invoke it explicitly with `powershell.exe -NoProfile -Command "..."`.
+- Quote Windows paths, or use Git Bash paths such as `/d/Repos/myops-autonomous`.
+- Before retrying a failed command, identify whether the failure was caused by mixing Bash, CMD, and PowerShell syntax.
+
 ### Next Steps for Full Integration
 
 1. **Install OpenSpec CLI** (for command-line skills like `/openspec-propose`):
