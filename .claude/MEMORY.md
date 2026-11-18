@@ -1,4 +1,5 @@
 - [config_startup_session](memory/config_startup_session.md) — Cloned OpenSpec & Superpowers, updated docs to reflect configured state
 - [startup_work_complete](memory/startup_work_complete.md) — Initial startup session work completed - repos cloned and configured
 - [permission_improvements](memory/permission_improvements.md) — Added permission allowlists to reduce prompts for common operations
-- [openspec_superpowers_integration](memory/openspec_superpowers_integration.md) — Demonstrated complete OpenSpec → Superpowers → archive workflow with TDD-ordered tasks, handoff signals, and validation report proving integrated specification-driven development pipeline operational
+- [openspec_superpowers_integration](memory/openspec_superpowers_integration.md) — Demonstrated complete OpenSpec → Superpowers → archive workflow with TDD-ordered tasks, handoff signals, and validation report proving integrated SDD pipeline operational
+- [integration_demo_complete](memory/integration_demo_complete.md) — OpenSpec-Superpowers integration meta-change committed in parent repo, workflow demonstration complete with recovery procedures documented
